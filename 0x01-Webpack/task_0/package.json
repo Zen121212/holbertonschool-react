@@ -1,19 +1,18 @@
 {
-    "name": "0x01-webpack",
-    "version": "1.0.0",
-    "description": "learning webpack",
-    "main": "index.js",
-    "dependencies": {
-      "jquery": "^3.5.1"
-    },
-    "devDependencies": {
-      "webpack": "^4.44.1",
-      "webpack-cli": "^3.3.12"
-    },
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "dev": "webpack --mode development"
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "webpack-task-0",
+  "version": "1.0.0",
+  "description": "Basic Webpack setup",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
   }
+}
