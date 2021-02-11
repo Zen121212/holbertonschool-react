@@ -1,7 +1,7 @@
-interface DirectorsInterface {
+interface DirectorInterface {
   workFromHome(): string;
   getCoffeeBreak(): string;
-  workDirectorTasks(): string; 
+  workDirectorTasks(): string;
 }
 
 interface TeacherInterface {
@@ -10,13 +10,15 @@ interface TeacherInterface {
   workTeacherTasks(): string;
 }
 
-class Director implements DirectorsInterface {
+class Director implements DirectorInterface {
   workFromHome(): string {
     return 'Working from home';
   }
+
   getCoffeeBreak(): string {
     return 'Getting a coffee break';
   }
+
   workDirectorTasks(): string {
     return 'Getting to director tasks';
   }
@@ -26,38 +28,37 @@ class Teacher implements TeacherInterface {
   workFromHome(): string {
     return 'Cannot work from home';
   }
+
   getCoffeeBreak(): string {
     return 'Cannot have a break';
   }
+
   workTeacherTasks(): string {
     return 'Getting to work';
   }
 }
 
-function createEmployee(firstName: string, lastName: string, salary: number | string): Director | Teacher {
-  if (salary as number && salary < 500) return new Teacher();
-  else return new Director(); 
-}
+const createEmployee = (
+  firstName: string,
+  lastName: string,
+  salary: number | string
+): Director | Teacher => {
+  if (typeof salary === 'number' && salary < 500) return new Teacher();
+  return new Director();
+};
 
-console.log(createEmployee('Guillaume', 'Salva', 200));
-console.log(createEmployee('John', 'Doe', 1000));
-console.log(createEmployee('Gerard', 'Zuck', '$500'));
+const isDirector = (employee: Director | Teacher): employee is Director => {
+  return (employee as Director).workDirectorTasks !== undefined;
+};
 
-function isDirector(employee: Director | Teacher): employee is Director {
-  return (employee instanceof Director) ? true : false;
-}
-
-function executeWork(employee: Director | Teacher): string {
-  return isDirector(employee) ? employee.workDirectorTasks() : employee.workTeacherTasks();
-}
-
-console.log(executeWork(createEmployee('Guillaume', 'Salva', 200)));
-console.log(executeWork(createEmployee('John', 'Doe', 1000)));
+const executeWork = (employee: Director | Teacher): string => {
+  if (isDirector(employee)) return employee.workDirectorTasks();
+  else return employee.workTeacherTasks();
+};
 
 type Subjects = 'Math' | 'History';
-function teachClass(todayClass: Subjects): string{
-  return todayClass === 'Math' ? 'Teaching Math' : 'Teaching History';
-}
 
-console.log(teachClass('Math'));
-console.log(teachClass('History'));
+const teachClass = (todayClass: Subjects): string => {
+  if (todayClass === 'Math') return 'Teaching Math';
+  if (todayClass === 'History') return 'Teaching History';
+};

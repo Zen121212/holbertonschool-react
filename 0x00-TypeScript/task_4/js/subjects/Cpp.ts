@@ -1,3 +1,5 @@
+/// <reference path="./Subject.ts" />
+
 namespace Subjects {
   export interface Teacher {
     experienceTeachingC?: number;
@@ -5,10 +7,15 @@ namespace Subjects {
 
   export class Cpp extends Subject {
     getRequirements(): string {
-      return `Here is the list of requirements for Cpp`;
+      return 'Here is the list of requirements for Cpp';
     }
+
     getAvailableTeacher(): string {
-      return this.teacher.experienceTeachingC > 0 ? `Available Teacher: ${this.teacher.firstName}` : 'No available teacher';
+      const { firstName, lastName, experienceTeachingC } = this.teacher;
+
+      if (experienceTeachingC !== undefined && experienceTeachingC > 0)
+        return `Available Teacher: ${firstName} ${lastName}`;
+      return 'No available teacher';
     }
-  }  
+  }
 }

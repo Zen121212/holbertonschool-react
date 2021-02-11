@@ -1,4 +1,4 @@
-export type RowID: number;
+export type RowID = number;
 
 export interface RowElement {
   firstName: string;
