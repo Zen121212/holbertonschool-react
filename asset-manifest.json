@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Zen121212/holbertonschool-react/tree/gh-pages/static/css/main.e8bd9cc8.chunk.css",
+    "main.js": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/main.fd2b5b89.chunk.js",
+    "main.js.map": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/main.fd2b5b89.chunk.js.map",
+    "runtime-main.js": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/runtime-main.7cc97dea.js",
+    "runtime-main.js.map": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/runtime-main.7cc97dea.js.map",
+    "static/js/2.9fd5f4e5.chunk.js": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/2.9fd5f4e5.chunk.js",
+    "static/js/2.9fd5f4e5.chunk.js.map": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/2.9fd5f4e5.chunk.js.map",
+    "static/js/3.4a34e60f.chunk.js": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/3.4a34e60f.chunk.js",
+    "static/js/3.4a34e60f.chunk.js.map": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/3.4a34e60f.chunk.js.map",
+    "index.html": "/Zen121212/holbertonschool-react/tree/gh-pages/index.html",
+    "static/css/main.e8bd9cc8.chunk.css.map": "/Zen121212/holbertonschool-react/tree/gh-pages/static/css/main.e8bd9cc8.chunk.css.map",
+    "static/js/2.9fd5f4e5.chunk.js.LICENSE.txt": "/Zen121212/holbertonschool-react/tree/gh-pages/static/js/2.9fd5f4e5.chunk.js.LICENSE.txt",
+    "static/media/holberton-logo.24bab5d6.jpg": "/Zen121212/holbertonschool-react/tree/gh-pages/static/media/holberton-logo.24bab5d6.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7cc97dea.js",
+    "static/js/2.9fd5f4e5.chunk.js",
+    "static/css/main.e8bd9cc8.chunk.css",
+    "static/js/main.fd2b5b89.chunk.js"
+  ]
+}
