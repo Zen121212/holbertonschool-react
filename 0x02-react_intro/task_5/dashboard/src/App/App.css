@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+  margin:0px;
 }
 
 .App-logo {
@@ -32,11 +33,8 @@ body {
   position: absolute;
   bottom: 0px;
   border-top: 3px solid #e1354b;
-  font-style:italic;
-  
+  font-style: italic;
   padding: 1rem 0;
-}
-.App-footer{
   font-family:serif;
   font-size:18px;
 }

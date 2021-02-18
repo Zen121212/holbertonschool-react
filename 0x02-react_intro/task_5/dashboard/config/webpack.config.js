@@ -1,51 +1,38 @@
-const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-
-
+const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
-    devtool: 'source-map',
-    entry: "./src/index.js",
-    output: {
-        path: path.resolve(__dirname, "/dist"),
-        filename: "bundle.js"
-    },
-    module: {
-        rules: [{
-            test: /\.jsx$/,
-            exclude: /node_modules/,
-            use: {
-                loader: 'babel-loader',
-                options: {
-                    presets: ['@babel/preset-react']
-                }
-            }
-        }, {
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract(
-                {
-                    fallback: 'style-loader',
-                    use: ['css-loader']
-                }
-            )
-        },
-        {
-            test: /\.(png|jpg|gif)$/,
-            use: [
-                {
-                    loader: 'file-loader'
-                }
-            ]
-        }
+  mode: 'development',
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, '..', 'dist'),
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new HTMLWebpackPlugin({
+      filename: 'index.html',
+      template: './dist/index.html'
+    })
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/i,
+        use: [
+          'file-loader',
+          { loader: 'image-webpack-loader', options: { disable: true } }
         ]
-    },
-    plugins: [
-        new HtmlWebPackPlugin({
-            hash: true,
-            filename: "index.html",  //target html
-            template: "./dist/index.html" //source html
-        }),
-        new ExtractTextPlugin({ filename: 'css/style.css' })
+      }
     ]
-}
+  },
+  devtool: 'inline-source-map'
+};
