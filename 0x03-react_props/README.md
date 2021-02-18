@@ -1,1 +1,1 @@
-**0x02-react_intro project**
+**0x03-react_props project**
