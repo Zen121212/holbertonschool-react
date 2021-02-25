@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment }  from 'react';
 import PropTypes from 'prop-types';
 
 import './Notifications.css';
@@ -7,6 +7,7 @@ import closeIcon from '../assets/close-icon.png';
 
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
+
 
 export const Notification = ({ displayDrawer, listNotifications }) => {
   return (
