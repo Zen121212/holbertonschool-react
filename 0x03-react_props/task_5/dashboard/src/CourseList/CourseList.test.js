@@ -11,7 +11,7 @@ describe('CourseList', () => {
     expect(wrapper.exists()).toBe(true);
   });
 
-describe('listCourses is empty', () => {
+  describe('listCourses is empty', () => {
     test('renders correctly if not specified', () => {
       const wrapper = shallow(<CourseList />);
 

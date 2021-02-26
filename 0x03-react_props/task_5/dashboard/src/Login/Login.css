@@ -1,11 +1,11 @@
 label {
-    padding: 1rem;
-  }
-  
+  padding: 1rem;
+}
+
 label:first-of-type {
-    padding-left: 0;
-  }
-  
+  padding-left: 0;
+}
+
 input + button {
-    margin: 0 1rem;
-  }
+  margin: 0 2rem;
+}

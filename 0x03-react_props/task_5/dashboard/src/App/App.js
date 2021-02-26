@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import './App.css';
+
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Login from '../Login/Login';
@@ -27,7 +28,7 @@ function App({ isLoggedIn }) {
 
   return (
     <Fragment>
-    <Notifications listNotifications={listNotifications} />
+      <Notifications listNotifications={listNotifications} />
       <div className='App'>
         <Header />
         <div className='App-body'>

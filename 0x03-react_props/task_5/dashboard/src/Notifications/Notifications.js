@@ -1,39 +1,44 @@
-import React, { Fragment }  from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import './Notifications.css';
-import { getLatestNotification } from '../utils/utils';
 import closeIcon from '../assets/close-icon.png';
+import { getLatestNotification } from '../utils/utils';
 
 import NotificationItem from './NotificationItem';
 import NotificationItemShape from './NotificationItemShape';
 
-
-export const Notification = ({ displayDrawer, listNotifications }) => {
+export const Notifications = ({ displayDrawer, listNotifications }) => {
   return (
     <div className='notifications-wrapper'>
       <div className='menuItem'>Your Notifications</div>
       {displayDrawer && (
         <div className='Notifications'>
-        {listNotifications.length ? (
-          <Fragment>
-            <p>Here is the list of notifications</p>
-            <ul>
-              {listNotifications.map(({ id, type, value, html }) => (
-                <NotificationItem
-                  key={id}
-                  type={type}
-                  value={value}
-                  html={html}
-                />
-              ))}
-            </ul>
-          </Fragment>
-        ) : (
-          <p>No new notifications for now</p>
-        )}
+          {listNotifications.length ? (
+            <Fragment>
+              <p>Here is the list of notifications</p>
+              <ul>
+                {listNotifications.map(({ id, type, value, html }) => (
+                  <NotificationItem
+                    key={id}
+                    type={type}
+                    value={value}
+                    html={html}
+                  />
+                ))}
+              </ul>
+            </Fragment>
+          ) : (
+            <p>No new notifications for now</p>
+          )}
           <button
-            className='close-icon'
+            style={{
+              position: 'absolute',
+              top: '10px',
+              right: '10px',
+              border: 'none',
+              backgroundColor: 'transparent'
+            }}
             aria-label='Close'
             onClick={() => console.log('Close button has been clicked')}
           >
@@ -49,14 +54,14 @@ export const Notification = ({ displayDrawer, listNotifications }) => {
   );
 };
 
-Notification.propTypes = {
+Notifications.propTypes = {
   displayDrawer: PropTypes.bool,
   listNotifications: PropTypes.arrayOf(NotificationItemShape)
 };
 
-Notification.defaultProps = {
+Notifications.defaultProps = {
   displayDrawer: false,
   listNotifications: []
 };
 
-export default Notification;
+export default Notifications;
