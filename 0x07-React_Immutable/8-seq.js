@@ -8,9 +8,10 @@ const printBestStudents = (obj) => {
   const bestStudents = Seq(obj)
     .filter((student) => student.score > 70)
     .map((student) => {
-      const { firstName, lastName } = student;
+      const { score, firstName, lastName } = student;
       return {
         ...student,
+        score: score,
         firstName: makeUppercase(firstName),
         lastName: makeUppercase(lastName)
       };
